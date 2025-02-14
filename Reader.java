@@ -3,6 +3,9 @@
  * @author Charles Stremel
  */
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Reader {
 	//Double check
 	public static final int CARD_NUMBER_ = 0;
@@ -69,7 +72,7 @@ public class Reader {
 	// Reference problem !
 	public void setBooks(List<Book> books) {
 		//Instantiation problem !
-		this.books = new List<>();
+		this.books = new ArrayList<>();
 		this.books = books;
 	}
 	public int getBookCount() {
@@ -87,11 +90,11 @@ public class Reader {
 		}
 	}
 	public Code addBook(Book book) {
-		if books.contains(book) {
+		if (books.contains(book)) {
 			return Code.BOOK_ALREADY_CHECKED_OUT_ERROR;
 		} else {
 			books.add(book);
-			return Code.SUCCESS:
+			return Code.SUCCESS;
 		}
 
 	}
