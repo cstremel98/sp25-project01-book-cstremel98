@@ -59,13 +59,6 @@ public class Reader {
         this.name = name;
     }
 
-    public int getCardNumber() {
-        return cardNumber;
-    }
-    public void setCardNumber(int cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-
     public List<Book> getBooks() {
         return books;
     }
