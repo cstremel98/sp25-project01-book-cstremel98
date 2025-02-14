@@ -7,7 +7,6 @@
     Date: 02/22/21
  */
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -15,7 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import Utilities.Code;
+import Reader.Book;
+import Reader.Code;
+import Reader.Reader;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,7 +70,7 @@ class ReaderTest {
         phone_ = "555-555-4444";
 
         //other variable declarations---
-        bookTest = new Book("5297", "Count of Monte Cristo", "Adventure", 999, "Alexandrea Dumas", LocalDate.of(2021, 1, 1));
+        bookTest = new Book("5297", "Count of Monte Cristo", "Adventure", "Alexandrea Dumas", 999 , LocalDate.of(2021, 1, 1));
 
     }
 

@@ -17,13 +17,12 @@ public class Book {
 	private String isbn;
 	private String title;
 	private String subject;
-	private String author;
-
 	private int page_count;
+	private String author;
 
 	private LocalDate dueDate;
 
-	public Book(String isbn, String title, String subject, String author, int page_count, LocalDate dueDate) {
+	public Book(String isbn, String title, String subject, int page_count, String author, LocalDate dueDate) {
 		this.isbn = isbn;
 		this.title = title;
 		this.subject = subject;

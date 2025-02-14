@@ -22,8 +22,8 @@ class BookTest {
     void setUp() {
         nullBook = null;
         book = new Book(isbn, title, subject, author, page_count, dueDate);
-        book2 = new Book(isbn2, title2, subject2, author2, page_count2, dueDate);
-        book3 = new Book(isbn2, title2, subject2, author2, page_count2, dueDate);
+        book2 = new Book(isbn2, title2, subject2, page_count2, author2, dueDate);
+        book3 = new Book(isbn2, title2, subject2, page_count2, author2, dueDate);
     }
 
     @AfterEach
