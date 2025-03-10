@@ -3,7 +3,7 @@
  * @author Charles Stremel
  */
 
-import Utilities.Code;
+//import Utilities.Code;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -48,6 +48,7 @@ public class Reader {
     public String getPhone() {
         return phone;
     }
+    
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -55,39 +56,53 @@ public class Reader {
     public String getName() {
         return name;
     }
+    
     public void setName(String name) {
         this.name = name;
     }
 
+    public int getCardNumber() {
+    	return cardNumber;
+    }
+    
     public List<Book> getBooks() {
         return books;
     }
+    
     // Reference problem !
     public void setBooks(List<Book> books) {
         //Instantiation problem !
         this.books = new ArrayList<>();
         this.books = books;
     }
+    
     public int getBookCount() {
         return books.size();
     }
+    
     public boolean hasBook(Book book) {
         return books.contains(book);
     }
-    public Code removeBook(Book book) {
+    
+    public boolean removeBook(Book book) {
         if (!books.contains(book) || books.isEmpty()) {
-            return Code.READER_DOESNT_HAVE_BOOK_ERROR;
+		return false;
+		//return Code.READER_DOESNT_HAVE_BOOK_ERROR;
         } else {
-            books.remove(book);
-            return Code.SUCCESS;
+		books.remove(book);
+		return true;
+		//return Code.SUCCESS;
         }
     }
-    public Code addBook(Book book) {
+    
+    public boolean addBook(Book book) {
         if (books.contains(book)) {
-            return Code.BOOK_ALREADY_CHECKED_OUT_ERROR;
+            //return Code.BOOK_ALREADY_CHECKED_OUT_ERROR;
+	    return false;
         } else {
             books.add(book);
-            return Code.SUCCESS;
+            return true;
+	    //return Code.SUCCESS;
         }
 
     }

@@ -45,7 +45,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return title + " by " + author + " ISBN: " + isbn;
+		return "[" + subject + "] " + title + " by " + author + " ISBN: " + isbn;
 	}
 
 	public String getIsbn() {

@@ -6,7 +6,6 @@
 import java.util.HashMap;
 
 public class Shelf {
-	//Double check
 	public static final int SHELF_NUMBER_ = 0;
 	public static final int SUBJECT_ = 1;
 
@@ -16,23 +15,39 @@ public class Shelf {
 
 	public Shelf(int shelfNumber, String subject) {
 		this.shelfNumber = shelfNumber;
+		this.subject = subject;
+		books = new HashMap<>();
 	}
 	
-	public Code addBook(Book book) {		
-		int x = books.get(book);
-		if(books.get(book) != null) {
+	public boolean addBook(Book book) {
+		int x;	
+		
+		if(books.get(book) == null) {
+			x = 0;
+		} else {
+			x = books.get(book);
+		}
+
+		System.out.println("ADDING");
+		if(books.get(book) != null) { 
 			books.put(book, x+1);
-			return CODE.SUCCESS;
+			System.out.println(books.get(book));
+			return true;
+			//return CODE.SUCCESS;
+		} else {
+			books.put(book, 1);
+			System.out.println(books.get(book));
+			return false;
 		}
 	}
 
-	//Double check
+	/*
 	@Override
 	public boolean equals(Object o) {
 		if (o == null || getClass() != o.getClass()) return false;
 		Shelf shelf = (Shelf) o;
 		return shelfNumber == shelf.shelfNumber && Objects.equals(subject, shelf.subject);
-	}
+	}*/
 	
 	public int getBookCount(Book book) {
 		if(books.get(book) != null) {
@@ -54,20 +69,21 @@ public class Shelf {
 		return subject;
 	}
 	
+	/*
 	//Double check
 	@Override
 	public int hashCode() {
 		return Objects.hash(shelfNumber, subject);
-	}
+	}*/
 	
 	public String listBooks() {
-		System.out.println(books);
+		return books.toString();
 	}
 	
-	public Code removeBook(Book book) {
+	public boolean removeBook(Book book) {
 		int x = books.get(book);
 		books.put(book, x-1);
-	
+		return true;
 	}
 	
 	public void setBooks(HashMap<Book, Integer> books) {
@@ -80,7 +96,7 @@ public class Shelf {
 	
 	@Override
 	public String toString() {
-		return shelfNumber + " : " + subject;
+		return "#" + shelfNumber + ": " + subject;
 	}
 	
 	public void setSubject(String subject) {
