@@ -48,12 +48,9 @@ public class Main {
 	Reader drew = csumb.getReaderByCard(1);
        
 	csumb.addReader(drew);
-	csumb.addReader(drew);
-	Reader Jamea = new Reader(123, "Jameaa", "9494994901");
-	csumb.addReader(Jamea);
-	csumb.addReader(Jamea);
         csumb.listShelves(true);
 
+	csumb.checkOutBook(drew,bestServedCold);
 	csumb.checkOutBook(drew,bestServedCold);
 	csumb.checkOutBook(drew,bestServedCold);
 	csumb.checkOutBook(drew,bestServedCold);
@@ -65,8 +62,9 @@ public class Main {
         
 	System.out.println(csumb.getBookByISBN("42-w-87"));
 
-	/*csumb.returnBook(drew,csumb.getBookByISBN("42-w-87"));
+	csumb.returnBook(drew,csumb.getBookByISBN("12345"));
+	csumb.listReaders(true);
         csumb.returnBook(drew,csumb.getBookByISBN("42-w-87"));
-	*/
+	csumb.listReaders(true);
     }
 }

@@ -65,8 +65,20 @@ public class Library {
 		}
 	}
 
+	public boolean returnBook(Reader reader, Book book) {
+		if(shelves.get(book.getSubject()) != null && reader.hasBook(book)) {
+			int bookCount = books.get(book);
+			books.put(book, bookCount+1);
+			reader.removeBook(book);
+			System.out.println("Successfully returned book.");
+			return true;
+		} else {
+			System.out.println("");
+			return false;
+		}
+	}
 	public boolean returnBook(Book book) {
-		if(shelves.get(book.getSubject() != null) {
+		if(shelves.get(book.getSubject()) != null) {
 			int bookCount = books.get(book);
 			books.put(book, bookCount+1);
 			System.out.println("Successfully returned book.");
@@ -281,7 +293,7 @@ public class Library {
 
 			int y=0;
 			while(y<strings.length) {
-				System.out.println("ROUND " + i);
+				//System.out.println("ROUND " + i);
 				tmpNum = Integer.parseInt(strings[y]);
 				y++;
 				tmpName = strings[y];
@@ -300,9 +312,9 @@ public class Library {
 					tmpBooks.add(tmpBook);
 					y++;
 					String dueDate1 = strings[y];
-					System.out.println("ADDED 1st BOOK.");	
+					//System.out.println("ADDED 1st BOOK.");	
 					if(y == strings.length-1) {
-						System.out.println("MOVING ON.");
+						//System.out.println("MOVING ON.");
 						y++;
 					} else {
 						y++;
@@ -319,7 +331,7 @@ public class Library {
 						y++;
 					}
 				} else {
-					System.out.println("ONLY 1 BOOK.");
+					//System.out.println("ONLY 1 BOOK.");
 					Book tmpBook = new Book(strings[y], "title", "sub", 00, "author", dueDate);
 					tmpBooks.add(tmpBook);
 					y++;
@@ -327,7 +339,7 @@ public class Library {
 					y++;
 				}	
 			}
-			System.out.println("ADDED " + i + " now at end.");
+			//System.out.println("ADDED " + i + " now at end.");
 			Reader tmp = new Reader(tmpNum, tmpName, tmpPhone);
 			tmp.setBooks(tmpBooks);
 			readers.add(tmp);
